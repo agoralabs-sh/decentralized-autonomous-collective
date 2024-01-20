@@ -5,13 +5,13 @@
     "@semantic-release/release-notes-generator",
     "@semantic-release/changelog",
     ["@semantic-release/exec", {
-      "prepareCmd": "./scripts/version.sh ${nextRelease.version}",
+      "prepareCmd": "./scripts/version.sh ${nextRelease.version} && ./bin/update_issue_templates.sh ${nextRelease.version}",
       "publishCmd": "./scripts/build.sh ${nextRelease.version} && ./scripts/package.sh ${nextRelease.version}"
     }],
     [
       "@semantic-release/git",
       {
-        "assets": ["CHANGELOG.md", "VERSION"],
+        "assets": [".github/ISSUE_TEMPLATE/bug_report_template.yml", "CHANGELOG.md", "VERSION"],
         "message": "chore(release): ${nextRelease.version}\n\n${nextRelease.notes}"
       }
     ],

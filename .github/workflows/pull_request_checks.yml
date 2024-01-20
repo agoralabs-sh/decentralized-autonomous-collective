@@ -51,9 +51,11 @@ jobs:
         uses: ./.github/actions/use-python-dependencies
       - name: "🦫 Setup Golang Dependencies"
         uses: ./.github/actions/use-golang-dependencies
-      - name: "🧪 Test"
+      - name: "🕸️ Install Private Network"
         uses: actions/checkout@v4
         with:
-          path: '.algorand'
-          repository: 'algorand/sandbox'
+          path: ".algorand"
+          repository: "algorand/sandbox"
+        run: ./bin/test.sh
+      - name: "🧪 Test"
         run: ./bin/test.sh

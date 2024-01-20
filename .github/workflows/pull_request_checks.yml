@@ -52,4 +52,8 @@ jobs:
       - name: "🦫 Setup Golang Dependencies"
         uses: ./.github/actions/use-golang-dependencies
       - name: "🧪 Test"
+        uses: actions/checkout@v4
+        with:
+          path: '.algorand'
+          repository: 'algorand/sandbox'
         run: ./bin/test.sh

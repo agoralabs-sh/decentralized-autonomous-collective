@@ -4,7 +4,7 @@ SCRIPT_DIR=$(dirname "${0}")
 
 source "${SCRIPT_DIR}"/set_vars.sh
 
-# Public: Starts up a private Algorand network, compiles the application code and runs tests against it.
+# Public: Starts up a private Algorand network, compiles the applications code and runs tests against it.
 #
 # Examples
 #
@@ -28,7 +28,7 @@ function main {
 
   is_algod_running=$(docker ps | grep algorand-sandbox-algod)
 
-  # if it is not already running start a  private network
+  # if it is not already running start a private network
   if [[ -z "${is_algod_running}" ]]; then
      printf "%b algorand sandbox not running, initializing... \n" "${INFO_PREFIX}"
      "${algorand_dir}"/sandbox up dev

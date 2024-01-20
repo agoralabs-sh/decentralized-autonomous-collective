@@ -29,6 +29,9 @@ function main() {
   # remove previous build
   rm -rf "${BUILD_DIR}"
 
+  # compile contracts
+  ./"${SCRIPT_DIR}"/compile.sh
+
   printf "%b compiling binary...\n" "${INFO_PREFIX}"
   go build -o "${BUILD_DIR}"/dac -ldflags "-X main.Version=$version" cmd/dac/main.go
 

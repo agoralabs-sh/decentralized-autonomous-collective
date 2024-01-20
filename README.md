@@ -83,21 +83,20 @@ Below is a quick outline of the structure of the app:
 * [Docker Compose v2.5.0+][docker-compose]
 * [Go 1.21+][golang]
 * [Python v3.10+][python]
-* [pip][pip] (optional, but highly recommended)
-* [PyTeal][pyteal]
+* [pip][pip]
 
 <sup>[Back to top ^][table-of-contents]</sup>
 
 ### 2.3. Setup
 
-1. The easiest way to install PyTeal is using `pip`
+1. Install the Python dependencies
 ```shell
-pip3 pyteal
+pip install -r requirements.txt
 ```
 
-2. Install Go dependencies:
+2. Install the Go dependencies:
 ```shell
-go mod tidy
+go get .
 ```
 
 3. Install Algorand private network (optional):
@@ -129,14 +128,15 @@ go mod tidy
 
 ### 3.1. Useful Scripts
 
-| Command                     | Description                                                       |
-|-----------------------------|-------------------------------------------------------------------|
-| `./bin/build.sh`            | Builds the CLI tool and contracts into the `.build/` directory.   |
-| `./bin/install_algorand.sh` | Installs a private Algorand network.                              |
-| `./bin/package.sh`          | Zips up the build files into a zip file.                          |
-| `./bin/start_algorand.sh`   | Starts up the private Algorand network                            |
-| `./bin/test.sh`             | Starts up the Algorand private network and runs tests against it. |
-| `./bin/version.sh`          | Sets the version in the [VERSION][version] file.                  |
+| Command                     | Description                                                                                                |
+|-----------------------------|------------------------------------------------------------------------------------------------------------|
+| `./bin/compile.sh`          | Compiles the PyTeal contracts into TEAL code into the `.build/applications/<application_name>/` directory. |
+| `./bin/build.sh`            | Builds the CLI tool and compiles contracts into the `.build/` directory.                                   |
+| `./bin/install_algorand.sh` | Installs a private Algorand network.                                                                       |
+| `./bin/package.sh`          | Zips up the build files into a zip file.                                                                   |
+| `./bin/start_algorand.sh`   | Starts up the private Algorand network                                                                     |
+| `./bin/test.sh`             | Starts up the Algorand private network and runs tests against it.                                          |
+| `./bin/version.sh`          | Sets the version in the [VERSION][version] file.                                                           |
 
 ## 👏 4. How to Contribute
 

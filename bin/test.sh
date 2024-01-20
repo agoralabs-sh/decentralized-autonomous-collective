@@ -20,7 +20,7 @@ function main {
   algorand_dir="${PWD}/.algorand"
 
   if [[ ! -d "${algorand_dir}" ]]; then
-    printf "%b no .algorand/ directory exists. installing algorand sandbox... \n" "${ERROR_PREFIX}" "${SCRIPT_DIR}"
+    printf "%b no .algorand/ directory exists. installing algorand sandbox... \n" "${INFO_PREFIX}" "${SCRIPT_DIR}"
     ./"${SCRIPT_DIR}"/install_algorand.sh
   fi
 

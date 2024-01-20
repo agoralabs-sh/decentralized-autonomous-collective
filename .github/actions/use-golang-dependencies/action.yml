@@ -19,5 +19,5 @@ runs:
           ${{ runner.os }}-go-
     - name: "📦 Install"
       if: steps.cache-dependencies.outputs.cache-hit != 'true'
-      run: go get .
+      run: go mod tidy
       shell: bash

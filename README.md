@@ -96,7 +96,7 @@ pip install -r requirements.txt
 
 2. Install the Go dependencies:
 ```shell
-go get .
+go mod tidy
 ```
 
 3. Install Algorand private network (optional):

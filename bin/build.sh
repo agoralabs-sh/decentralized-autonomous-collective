@@ -26,11 +26,14 @@ function main() {
     version="$1"
   fi
 
-  printf "%b Compiling binary...\n" "${INFO_PREFIX}"
-  go build -o "${BUILD_PATH}"/dac -ldflags "-X main.Version=$version" cmd/dac/main.go
+  # remove previous build
+  rm -rf "${BUILD_DIR}"
+
+  printf "%b compiling binary...\n" "${INFO_PREFIX}"
+  go build -o "${BUILD_DIR}"/dac -ldflags "-X main.Version=$version" cmd/dac/main.go
 
 
-  printf "%b Done!\n" "${INFO_PREFIX}"
+  printf "%b successfully compiled binaries and resources to \"${BUILD_DIR}\" \n" "${INFO_PREFIX}"
 }
 
 # And so, it begins...
